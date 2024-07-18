@@ -10,6 +10,7 @@ namespace CommandsService.Data
         Task<IEnumerable<Platform>> GetAllPlatforms();
         Task CreatePlaform(Platform platform);
         Task<bool> PlatformExists(int platformId);
+        Task<bool> ExternalPlatformExists(int externalPlatformId);
 
         //Commands
         Task<IEnumerable<Command>> GetCommandsByPlatform(int platformId);

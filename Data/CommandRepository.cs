@@ -32,6 +32,11 @@ namespace CommandsService.Data
             return await _context.PlatForms.AnyAsync(p => p.Id == platformId);
         }
 
+        public async Task<bool> ExternalPlatformExists(int externalPlatformId)
+        {
+            return await _context.PlatForms.AnyAsync(p => p.ExternalId == externalPlatformId);
+        }
+
         public async Task CreateCommand(int platformId, Command command)
         {
             if (command == null)
